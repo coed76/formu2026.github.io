@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Prematrícula 2026</title>
+    <style>
+        /* Incluye el CSS en la misma página para simplicidad */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            width: 180px; /* Ancho fijo para las etiquetas */
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .form-group input[type="text"] {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #000;
+            /* Simula el aspecto de las líneas del formulario original */
+        }
+        .inline-fields {
+            display: flex;
+            gap: 20px;
+        }
+        .inline-fields .field-item {
+            display: flex;
+            align-items: center;
+        }
+        .inline-fields .field-item label {
+            width: auto;
+            margin-right: 5px;
+        }
+        .inline-fields .field-item input {
+            width: 80px;
+            padding: 8px;
+            border: 1px solid #000;
+        }
+        .contact-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .contact-group .contact-field {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+        .contact-group .contact-field label {
+            width: 180px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .contact-group .contact-field input {
+            padding: 8px;
+            border: 1px solid #000;
+        }
+        .whatsapp-check {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            gap: 5px;
+        }
+        .whatsapp-check input[type="text"] {
+            width: 50px; /* Campo pequeño para respuesta corta (Sí/No) */
+        }
+        .whatsapp-check label {
+             width: auto;
+             font-weight: bold;
+        }
+        .whatsapp-button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .whatsapp-button {
+            background-color: transparent;
+            border: 2px solid #000;
+            padding: 20px 40px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px #ccc; /* Sombra para simular el relieve del original */
+            transition: background-color 0.3s;
+        }
+        .whatsapp-button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
 
+<div class="form-container">
+    
+    <div class="form-group">
+        <label for="nie">NIE del Estudiante:</label>
+        <input type="text" id="nie" name="nie" aria-label="NIE del Estudiante">
+    </div>
+
+    <div class="form-group">
+        <label for="nombre-completo">Nombre Completo:</label>
+        <input type="text" id="nombre-completo" name="nombre-completo" aria-label="Nombre Completo">
+    </div>
+
+    <div class="form-group">
+        <label for="nombre-responsable">Nombre del responsable:</label>
+        <input type="text" id="nombre-responsable" name="nombre-responsable" aria-label="Nombre del responsable">
+    </div>
+
+    <div class="form-group inline-fields">
+        <label for="reserva-matricula">Reserva matrícula en:</label>
+        <input type="text" id="reserva-matricula" name="reserva-matricula" style="width: 100px;" aria-label="Reserva matricula en">
+        
+        <div class="field-item">
+            <label for="turno">Turno:</label>
+            <input type="text" id="turno" name="turno" style="width: 70px;" aria-label="Turno">
+        </div>
+        
+        <div class="field-item">
+            <label for="seccion">Sección:</label>
+            <input type="text" id="seccion" name="seccion" style="width: 70px;" aria-label="Sección">
+        </div>
+    </div>
+
+    <div class="contact-group">
+        <div class="contact-field">
+            <label for="numero-contacto">Número de Contacto:</label>
+            <input type="text" id="numero-contacto" name="numero-contacto" aria-label="Número de Contacto">
+        </div>
+        
+        <div class="whatsapp-check">
+            <label for="whatsapp">Posee WhatsApp:</label>
+            <input type="text" id="whatsapp" name="whatsapp" style="width: 50px;" aria-label="Posee WhatsApp (Sí/No)">
+        </div>
+    </div>
+
+    <div class="whatsapp-button-container">
+        <button type="submit" class="whatsapp-button">
+            Generar Documento<br>para Enviar<br>por Whatsapp
+        </button>
+    </div>
+
+</div>
+
+</body>
+</html>
