@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
 
-        /* Canvas para partículas mejoradas */
+        /* Canvas para partículas */
         #particles-canvas {
             position: fixed;
             top: 0;
@@ -66,16 +66,15 @@
         }
 
         .logo-container {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
+            width: 140px;
+            height: 140px;
             margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            position: relative;
             animation: pulse 2s ease-in-out infinite;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
         }
 
         @keyframes pulse {
@@ -87,9 +86,28 @@
             }
         }
 
-        .logo-container svg {
-            width: 45px;
-            height: 45px;
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Logo placeholder - Reemplazar con tu imagen */
+        .logo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .logo-placeholder svg {
+            width: 60px;
+            height: 60px;
             fill: white;
         }
 
@@ -302,6 +320,7 @@
             gap: 15px;
             z-index: 1000;
             animation: slideInRight 0.5s ease-out;
+            max-width: 90%;
         }
 
         @keyframes slideInRight {
@@ -327,6 +346,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .success-icon svg {
@@ -340,9 +360,66 @@
             font-weight: 600;
         }
 
-        @media (max-width: 768px) {
+        /* Instrucción para agregar logo */
+        .logo-instruction {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.85em;
+            color: #667eea;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            max-width: 250px;
+        }
+
+        .logo-instruction strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        /* Tablets (768px - 1024px) */
+        @media (max-width: 1024px) and (min-width: 769px) {
             .form-container {
-                padding: 35px 25px;
+                max-width: 650px;
+                padding: 45px 40px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.15em;
+            }
+
+            .inline-group {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .contact-group {
+                grid-template-columns: 1.5fr 1fr;
+            }
+        }
+
+        /* Tablets pequeñas y móviles grandes (481px - 768px) */
+        @media (max-width: 768px) and (min-width: 481px) {
+            body {
+                padding: 15px;
+            }
+
+            .form-container {
+                padding: 35px 30px;
+                border-radius: 20px;
+            }
+
+            .logo-container {
+                width: 100px;
+                height: 100px;
             }
 
             h1 {
@@ -350,15 +427,22 @@
             }
 
             h2 {
-                font-size: 1em;
+                font-size: 1.1em;
+            }
+
+            .year-badge {
+                font-size: 0.85em;
+                padding: 5px 18px;
             }
 
             .inline-group {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .contact-group {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .checkbox-group {
@@ -366,31 +450,205 @@
             }
 
             .whatsapp-button {
+                padding: 16px 35px;
+                font-size: 1.05em;
+            }
+
+            .logo-instruction {
+                position: static;
+                margin-bottom: 15px;
+                max-width: 100%;
+            }
+        }
+
+        /* Móviles (320px - 480px) */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+                border-radius: 18px;
+            }
+
+            .header {
+                margin-bottom: 30px;
+            }
+
+            .logo-container {
+                width: 90px;
+                height: 90px;
+                margin-bottom: 15px;
+            }
+
+            .logo-placeholder svg {
+                width: 50px;
+                height: 50px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                margin-bottom: 6px;
+            }
+
+            h2 {
+                font-size: 1em;
+                margin-bottom: 8px;
+            }
+
+            .year-badge {
+                font-size: 0.8em;
+                padding: 5px 16px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            label {
+                font-size: 0.9em;
+                margin-bottom: 6px;
+            }
+
+            input[type="text"] {
+                padding: 12px 14px;
+                font-size: 0.95em;
+            }
+
+            .inline-group {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                margin-bottom: 20px;
+            }
+
+            .contact-group {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                margin-bottom: 30px;
+            }
+
+            .checkbox-group {
+                padding-top: 0;
+            }
+
+            .checkbox-wrapper {
+                gap: 8px;
+            }
+
+            .custom-checkbox {
+                width: 22px;
+                height: 22px;
+            }
+
+            .checkbox-label {
+                font-size: 0.9em;
+            }
+
+            .button-container {
+                margin-top: 35px;
+            }
+
+            .whatsapp-button {
                 width: 100%;
                 justify-content: center;
+                padding: 15px 30px;
+                font-size: 1em;
+                gap: 10px;
+            }
+
+            .whatsapp-button svg {
+                width: 22px;
+                height: 22px;
             }
 
             .success-message {
-                left: 20px;
-                right: 20px;
+                left: 10px;
+                right: 10px;
                 top: auto;
-                bottom: 20px;
+                bottom: 10px;
+                padding: 15px 20px;
+                font-size: 0.9em;
+            }
+
+            .success-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .logo-instruction {
+                position: static;
+                margin-bottom: 15px;
+                font-size: 0.8em;
+                padding: 8px 12px;
             }
         }
 
-        .input-icon {
-            position: absolute;
-            right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            opacity: 0.3;
-            transition: opacity 0.3s ease;
+        /* Móviles muy pequeños (< 320px) */
+        @media (max-width: 319px) {
+            .form-container {
+                padding: 25px 15px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            h2 {
+                font-size: 0.95em;
+            }
+
+            .logo-container {
+                width: 80px;
+                height: 80px;
+            }
+
+            .whatsapp-button {
+                padding: 14px 25px;
+                font-size: 0.95em;
+            }
         }
 
-        input[type="text"]:focus + .input-icon {
-            opacity: 0.6;
+        /* Computadoras grandes (> 1024px) */
+        @media (min-width: 1025px) {
+            .form-container {
+                max-width: 750px;
+            }
+
+            input[type="text"]:hover {
+                transform: translateY(-1px);
+            }
+        }
+
+        /* Modo landscape para móviles */
+        @media (max-height: 600px) and (orientation: landscape) {
+            body {
+                align-items: flex-start;
+                padding: 15px;
+            }
+
+            .form-container {
+                margin: 20px auto;
+                padding: 30px;
+            }
+
+            .logo-container {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 15px;
+            }
+
+            .header {
+                margin-bottom: 25px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -401,9 +659,7 @@
 <div class="form-container">
     <div class="header">
         <div class="logo-container">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/>
-            </svg>
+            <img src="https://i.imgur.com/ugoJzRX.jpeg" alt="Logo Complejo Educativo Cantón San Isidro" id="logo-img">
         </div>
         <h1>PREMATRÍCULA</h1>
         <h2>COMPLEJO EDUCATIVO CANTÓN SAN ISIDRO</h2>
@@ -490,15 +746,19 @@
 </div>
 
 <script>
-    // Sistema de partículas mejorado con Canvas
+    // Sistema de partículas optimizado
     const canvas = document.getElementById('particles-canvas');
     const ctx = canvas.getContext('2d');
     
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    
+    resizeCanvas();
 
     const particles = [];
-    const particleCount = 60;
+    let particleCount = window.innerWidth < 768 ? 30 : 60;
 
     class Particle {
         constructor() {
@@ -554,11 +814,19 @@
     animate();
 
     window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        resizeCanvas();
+        const newCount = window.innerWidth < 768 ? 30 : 60;
+        
+        if (newCount > particles.length) {
+            for (let i = particles.length; i < newCount; i++) {
+                particles.push(new Particle());
+            }
+        } else if (newCount < particles.length) {
+            particles.splice(newCount);
+        }
     });
 
-    // Sistema de checkbox personalizado
+    // Sistema de checkbox
     let whatsappChecked = false;
 
     function toggleCheckbox() {
@@ -572,7 +840,7 @@
         }
     }
 
-    // Función mejorada para generar y enviar por WhatsApp
+    // Función para generar y enviar por WhatsApp
     function generarDocumentoWhatsapp() {
         const nie = document.getElementById('nie').value.trim();
         const nombreCompleto = document.getElementById('nombre-completo').value.trim();
@@ -582,7 +850,6 @@
         const seccion = document.getElementById('seccion').value.trim();
         const numeroContacto = document.getElementById('numero-contacto').value.trim();
 
-        // Validación básica
         if (!nie || !nombreCompleto || !nombreResponsable || !reservaMatricula || !numeroContacto) {
             alert('⚠️ Por favor, complete todos los campos obligatorios');
             return;
@@ -614,7 +881,6 @@
         const mensajeCodificado = encodeURIComponent(mensaje);
         window.open(`https://api.whatsapp.com/send?text=${mensajeCodificado}`, '_blank');
 
-        // Mostrar mensaje de éxito
         const successMsg = document.getElementById('success-message');
         successMsg.classList.add('show');
         setTimeout(() => {
@@ -622,15 +888,17 @@
         }, 3000);
     }
 
-    // Efecto de enfoque suave en inputs
+    // Efecto de enfoque en inputs
     const inputs = document.querySelectorAll('input[type="text"]');
     inputs.forEach(input => {
         input.addEventListener('focus', function() {
-            this.parentElement.parentElement.querySelector('label').style.color = '#667eea';
+            const label = this.closest('.form-group').querySelector('label');
+            if (label) label.style.color = '#667eea';
         });
         
         input.addEventListener('blur', function() {
-            this.parentElement.parentElement.querySelector('label').style.color = '#4a5568';
+            const label = this.closest('.form-group').querySelector('label');
+            if (label) label.style.color = '#4a5568';
         });
     });
 </script>
